@@ -1,0 +1,12 @@
+class Solution:
+    def hasDuplicate(self, nums: List[int]) -> bool:
+        res = {}
+        for i in range(len(nums)):
+            if nums[i] not in res:
+                res[nums[i]] = 1
+            else:
+                res[nums[i]] += 1
+
+            if res[nums[i]] > 1:
+                return True
+        return False
